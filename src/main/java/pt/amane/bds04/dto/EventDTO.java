@@ -3,9 +3,9 @@ package pt.amane.bds04.dto;
 import java.io.Serializable;
 import java.time.LocalDate;
 
+import javax.validation.constraints.Future;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.PastOrPresent;
 
 import pt.amane.bds04.entities.Event;
 
@@ -17,7 +17,7 @@ public class EventDTO implements Serializable {
 	@NotBlank(message = "The field NAME is required!")
 	private String name;
 	
-	@PastOrPresent(message = "Event date cannot be passed!")
+	@Future(message = "Event date cannot be passed!")
 	private LocalDate date;
 	
 	private String url;
